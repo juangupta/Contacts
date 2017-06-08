@@ -35,13 +35,16 @@
                     IsPassword="True">
                 </Entry>
             </StackLayout>
+            <ActivityIndicator
+                    IsRunning="{Binding IsRunning}">
+            </ActivityIndicator>
             <Button
                 Text="Login"
                 Command="{Binding LoginCommand}"
-                IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
                 BackgroundColor="Navy"
                 TextColor="White">
             </Button>
+            <!--
             <Label 
                     Text="{Binding Message}" 
                     BackgroundColor="Silver" 
@@ -54,6 +57,7 @@
                     VerticalOptions="FillAndExpand"
                     HeightRequest="60">
             </Label>
+            -->
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

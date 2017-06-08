@@ -23,11 +23,27 @@ namespace CheckTicketJG.ViewModels
         private NavigationService navigationService;
         private String message;
         private ApiService apiService;
+        private bool isRunning;
         private DialogService dialogService;
         #endregion
 
         #region Properties
 
+        public bool IsRunning
+        {
+            set
+            {
+                if (isRunning != value)
+                {
+                    isRunning = value;
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("IsRunning"));
+                }
+            }
+            get
+            {
+                return isRunning;
+            }
+        }
         public string Message
         {
             set
@@ -76,19 +92,20 @@ namespace CheckTicketJG.ViewModels
                     "Ingrese su Password");
                 return;
             }
-
+            IsRunning = true;
             User userLogin = new User
             {
                 Email = Email,
                 Password = Password
 
             };
-            var response = await apiService.Login(
+            var response = await apiService.Post<User>(
                 "http://checkticketsback.azurewebsites.net",
                 "/api",
                 "/Users/Login",
                 userLogin);
 
+            IsRunning = false;
             if (!response.IsSuccess)
             {
                 Message = response.Message;

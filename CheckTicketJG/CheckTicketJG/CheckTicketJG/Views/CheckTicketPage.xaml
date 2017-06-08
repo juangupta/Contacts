@@ -4,10 +4,44 @@
              x:Class="CheckTicketJG.Views.CheckTicketPage"
              Title="Check Ticket"
              BindingContext="{Binding Main, Source={StaticResource Locator}}">
-    <ContentPage.Content
-        BindingContext="{Binding CheckTicket}">
-        <StackLayout>
-            <Label Text="Welcome to CheckTicketPage!" />
+    <ContentPage.Content>
+        <StackLayout
+            BindingContext="{Binding CheckTicket}"
+            Padding="8"
+            Orientation="Vertical"
+            VerticalOptions="Center">
+            <Label
+                Text="Ticket Code:"
+                HorizontalOptions="Center"
+                FontSize="Medium">
+            </Label>
+            <Entry
+                Placeholder="Ingrese el código de su ticket"
+                Text="{Binding TicketCode, Mode=TwoWay}"
+                Keyboard="Email"
+                HorizontalOptions="Center"
+                HorizontalTextAlignment="Center">
+            </Entry>
+            <ActivityIndicator
+                    IsRunning="{Binding IsRunning}">
+            </ActivityIndicator>
+            <Label 
+                Text="{Binding Message}" 
+                BackgroundColor="Silver" 
+                TextColor="{Binding Color}" 
+                FontAttributes="Bold"
+                FontSize="Medium"
+                HorizontalTextAlignment="Center" 
+                VerticalTextAlignment="Center" 
+                HorizontalOptions="FillAndExpand"
+                HeightRequest="60">
+            </Label>
+            <Button
+                Text="Validar Ticket"
+                Command="{Binding CheckTicketCommand}"
+                BackgroundColor="Navy"
+                TextColor="White">
+            </Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
