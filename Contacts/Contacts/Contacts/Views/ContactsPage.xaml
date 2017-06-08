@@ -61,8 +61,10 @@
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
-
             </ListView>
+            <ContentPage.ToolbarItems>
+                <ToolbarItem Icon="ic_action_add_circle.png" Command="{Binding AddContactCommand}"/>
+            </ContentPage.ToolbarItems>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

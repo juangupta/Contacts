@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CheckTicketJG.Views.LoginPage"
+             Title="Login"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}">
+    <ContentPage.Content>
+        <StackLayout
+            BindingContext="{Binding Login}"
+            Padding="8"
+            VerticalOptions="Center">
+            <StackLayout 
+                Orientation="Vertical">
+                <Label
+                    FontSize="Medium"
+                    FontAttributes="Bold"
+                    Text="Email:">
+                </Label>
+                <Entry
+                    Placeholder="Ingrese su email"
+                    Text="{Binding Email, Mode=TwoWay}"
+                    Keyboard="Email">
+                </Entry>
+            </StackLayout>
+            <StackLayout 
+                Orientation="Vertical">
+                <Label
+                    FontSize="Medium"
+                    FontAttributes="Bold"
+                    Text="Password:">
+                </Label>
+                <Entry
+                    Placeholder="Ingrese su passsword"
+                    Text="{Binding Password, Mode=TwoWay}"
+                    IsPassword="True">
+                </Entry>
+            </StackLayout>
+            <Button
+                Text="Login"
+                Command="{Binding LoginCommand}"
+                IsEnabled="{Binding IsEnabled, Mode=TwoWay}"
+                BackgroundColor="Navy"
+                TextColor="White">
+            </Button>
+            <Label 
+                    Text="{Binding Message}" 
+                    BackgroundColor="Silver" 
+                    TextColor="Red" 
+                    FontAttributes="Bold"
+                    FontSize="Medium"
+                    HorizontalTextAlignment="Center" 
+                    VerticalTextAlignment="Center" 
+                    HorizontalOptions="FillAndExpand" 
+                    VerticalOptions="FillAndExpand"
+                    HeightRequest="60">
+            </Label>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
