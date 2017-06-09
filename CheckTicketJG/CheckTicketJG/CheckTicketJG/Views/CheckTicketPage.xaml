@@ -39,7 +39,7 @@
             <Button
                 Text="Validar Ticket"
                 Command="{Binding CheckTicketCommand}"
-                BackgroundColor="Navy"
+                BackgroundColor="DarkRed"
                 TextColor="White">
             </Button>
         </StackLayout>

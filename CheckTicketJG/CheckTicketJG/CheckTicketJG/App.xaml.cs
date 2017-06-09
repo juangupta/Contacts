@@ -10,7 +10,7 @@ namespace CheckTicketJG
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new LoginPage());
+            MainPage = new LoginPage();
         }
 
         protected override void OnStart()

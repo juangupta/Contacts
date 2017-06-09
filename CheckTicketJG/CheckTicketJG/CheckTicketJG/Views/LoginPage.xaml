@@ -11,28 +11,34 @@
             VerticalOptions="Center">
             <StackLayout 
                 Orientation="Vertical">
+                <Image
+                    HorizontalOptions="Center"
+                    Source="logo.png"
+                    WidthRequest="150"
+                    HeightRequest="150">
+                </Image>
                 <Label
-                    FontSize="Medium"
-                    FontAttributes="Bold"
-                    Text="Email:">
+                    HorizontalOptions="Center"
+                    Text="Check Ticket"
+                    FontSize="Large"
+                    FontAttributes="Bold">
                 </Label>
                 <Entry
                     Placeholder="Ingrese su email"
                     Text="{Binding Email, Mode=TwoWay}"
-                    Keyboard="Email">
+                    Keyboard="Email"
+                    HorizontalOptions="CenterAndExpand"
+                    WidthRequest="300">
                 </Entry>
             </StackLayout>
             <StackLayout 
                 Orientation="Vertical">
-                <Label
-                    FontSize="Medium"
-                    FontAttributes="Bold"
-                    Text="Password:">
-                </Label>
                 <Entry
                     Placeholder="Ingrese su passsword"
                     Text="{Binding Password, Mode=TwoWay}"
-                    IsPassword="True">
+                    IsPassword="True"
+                    HorizontalOptions="CenterAndExpand"
+                    WidthRequest="300">
                 </Entry>
             </StackLayout>
             <ActivityIndicator
@@ -41,7 +47,7 @@
             <Button
                 Text="Login"
                 Command="{Binding LoginCommand}"
-                BackgroundColor="Navy"
+                BackgroundColor="DarkRed"
                 TextColor="White">
             </Button>
             <!--
